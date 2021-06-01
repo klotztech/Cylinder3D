@@ -30,6 +30,8 @@ def get_pc_model_class(name):
 class SemKITTI_sk(data.Dataset):
     def __init__(self, data_path, imageset='train',
                  return_ref=False, label_mapping="semantic-kitti.yaml", nusc=None):
+
+        print("SemKITTI_sk: data_path", data_path, imageset, return_ref, label_mapping, nusc);
         self.return_ref = return_ref
         with open(label_mapping, 'r') as stream:
             semkittiyaml = yaml.safe_load(stream)
